@@ -18,7 +18,21 @@ module.exports = {
       },
       plugins: ['import', 'react', '@typescript-eslint/eslint-plugin'/*, 'prettier' */],
       rules: {
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+          }
+        ],
         "import/prefer-default-export": "off",
+        "react/function-component-definition": [2, {
+          "namedComponents": "arrow-function"
+        }],
+        "react/require-default-props": "off",
         "react/jsx-filename-extension": [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
         "semi": "off",
         "@typescript-eslint/semi": ['error', 'never'],
